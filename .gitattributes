@@ -1,0 +1,3 @@
+# to set git attributes
+# set linguist-language is typescript
+*.js linguist-language=typescript

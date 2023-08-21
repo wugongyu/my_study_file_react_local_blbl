@@ -1,0 +1,5 @@
+#browsers: use [npx browserslist] to see the support browserslist
+>1%
+last 4 versions
+Firefox ESR
+not ie < 9 # Doesn't support IE8 anymore
