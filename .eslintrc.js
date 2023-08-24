@@ -22,9 +22,9 @@ module.exports = {
   },
   rules: {
     // 0|'off' -- 关闭规则，1|'warn' -- 警告，2|'error' -- 报错
-    "no-unused-vars": 0,
-    "react/display-name": 0,
-    "react/prop-types": 0,
+    "no-unused-vars": 1,
+    "react/display-name": 1,
+    "react/prop-types": 1,
   },
   settings: {
     react: {
