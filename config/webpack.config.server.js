@@ -4,6 +4,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // webpack-node-externals 用来剔除 Node.js 原生模块的插件，它可以让你在服务器端应用程序中使用类似 Node.js 原生模块的代码，而无需将它们打包至 bundle 中
 const nodeExternals = require('webpack-node-externals');
 
+// 自定义ssr服务端渲染插件
+const SSRServerPlugin = require('../plugin/webpack/server-plugin');
+
 const baseWebpackConfig = require('./webpack.config.base');
 const { styleLoaders } = require('./util');
 
@@ -64,6 +67,9 @@ const serverWebpackConfig = merge(baseWebpackConfig, {
     // 服务端不支持window、document等对象，需将css外链
     new MiniCssExtractPlugin({
       filename: 'static/css/[name].[contenthash].css',
+    }),
+    new SSRServerPlugin({
+      filename: 'server-bundle.json',
     })
   ]
 });

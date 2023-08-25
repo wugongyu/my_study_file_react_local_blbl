@@ -1,6 +1,7 @@
 BiliBili webstation mock study
 ## 
 本项目基于此[SSR服务端渲染](https://github.com/dxx/react-ssr)模板，使用React16.8，Typescript开发
+[ssr服务端渲染和同构原理](https://juejin.cn/post/6844903943902855176?searchId=20230824141949E621814E1A3767CC2128)
 
 ## 技术点
 * react
