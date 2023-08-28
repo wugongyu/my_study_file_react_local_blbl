@@ -22,7 +22,7 @@ module.exports = {
   // 模块解析配置
   resolve: {
     // 自动解析确定的扩展，在引用相关模块时可不带扩展
-    extension: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
   },
   module: {
     rules: [

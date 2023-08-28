@@ -3,11 +3,10 @@
 import * as React from "react"
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { legacy_createStore as createStore } from "redux";
 import { loadableReady } from '@loadable/component';
 import * as ReactDOM from "react-dom";
+import createStore from "./redux/store";
 
-import Root from "./App";
 import App from "./App";
 const createApp = (Component) => {
   // 获取服务端初始化的state，创建store

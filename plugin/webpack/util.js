@@ -31,7 +31,7 @@ const validateConfig = (compiler) => {
   }
 }
 
-export {
+module.exports = {
   isJS,
   onEmit,
   validateConfig

@@ -66,7 +66,7 @@ const clientWebpackConfig = merge(baseWebpackConfig, {
               return false;
             }
             // node_modules目录下的模块打包到vendor chunk中
-            return module.context && module.context.include('node_modules');
+            return module.context && module.context.includes('node_modules');
           }
         }
       }
