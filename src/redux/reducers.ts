@@ -2,20 +2,53 @@ import * as actionTypes from './actionsTypes';
 import { AnyAction, combineReducers } from 'redux';
 
 const initState = {
-  data: [],
+  shouldLoad: false,
+  oneLevelPartitions: [],
+  banners: [],
+  rankingVideos: []
 };
 
-function updateData(data = initState.data, action: AnyAction){
+function combineShouldLoad(shouldLoad = initState.shouldLoad, action: AnyAction){
   switch (action.type) {
-    case actionTypes.UPDATE_DATA:
-      return action.data;
+    case actionTypes.SET_SHOULD_LOAD:
+      return action.shouldLoad;
     default:
-      return data;
+      return shouldLoad;
+  }
+}
+
+function combineOneLevelPartitions(oneLevelPartitions = initState.oneLevelPartitions, action: AnyAction){
+  switch (action.type) {
+    case actionTypes.SET_ONE_LEVEL_PARTITIONS:
+      return action.oneLevelPartitions;
+    default:
+      return oneLevelPartitions;
+  }
+}
+
+function combineBanners(banners = initState.banners, action: AnyAction) {
+  switch (action.type) {
+    case actionTypes.SET_BANNERS:
+      return action.banners;
+    default:
+      return banners;
+  }
+}
+
+function combineRankingVideos(rankingVideos = initState.rankingVideos, action: AnyAction){
+  switch (action.type) {
+    case actionTypes.SET_RANKING_VIDEOS:
+      return action.rankingVideos;
+    default:
+      return rankingVideos;
   }
 }
 
 const reducer = combineReducers({
-  updateData: updateData,
+  shouldLoad: combineShouldLoad,
+  oneLevelPartitions: combineOneLevelPartitions,
+  banners: combineBanners,
+  rankingVideos: combineRankingVideos,
 });
 
 export default reducer;

@@ -1,5 +1,6 @@
 import loadable from "@loadable/component";
 import * as React from "react";
+import getAsyncIndexContent from "../redux/async-actions/home";
 import NestedRoute from "./NestedRoute";
 import StatusRoute from "./StatusRoute";
 
@@ -19,7 +20,7 @@ const router: RouteProps[] = [
     // 定义asyncData，把数据请求方法关联到路由中，
     // 从而实现【数据预取同构】，解决双端如何使用同一套数据请求方法来进行数据请求的问题
     asyncData: (store) => {
-      return Promise.resolve({});
+      return store.dispatch(getAsyncIndexContent());
     }
   }
 ];

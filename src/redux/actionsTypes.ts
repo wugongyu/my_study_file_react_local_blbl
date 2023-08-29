@@ -1,1 +1,8 @@
 export const UPDATE_DATA = 'UPDATE_DATA';
+
+
+export const SET_SHOULD_LOAD = 'SET_SHOULD_LOAD';
+export const SET_ONE_LEVEL_PARTITIONS = 'SET_ONE_LEVEL_PARTITIONS'; // 一级分类
+export const SET_BANNERS = 'SET_BANNERS';
+
+export const SET_RANKING_VIDEOS = 'SET_RANKING_VIDEOS';
