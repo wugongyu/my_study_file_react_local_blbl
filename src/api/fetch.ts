@@ -44,3 +44,5 @@ export function postJSON(url: string, data: FetchDataProps){
   })
 }
 
+export const commonFetchSuccessCode = '1'; // 请求成功返回的code值 
+
