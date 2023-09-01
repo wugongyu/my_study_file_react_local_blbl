@@ -16,7 +16,7 @@ export default function getAsyncIndexContent(){
       getRankingsById(0),
     ];
     return Promise.all(promises).then(([result1, result2, result3]) => {
-      // console.log(result1, result2, result3);
+      console.log(result1, result2, result3);
       if(result1.code === commonFetchSuccessCode) {
         // 获取分类数据
         const partitions = result1.data['0'];
