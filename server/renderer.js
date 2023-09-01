@@ -66,8 +66,8 @@ class ServerRenderer {
       }
       let promises;
       // 匹配路由
-      let matchs = matchRoutes(router, request.path);
-      promises = matchs.map(({ route, match }) => {
+      let matches = matchRoutes(router, request.path);
+      promises = matches.map(({ route, match }) => {
         const { asyncData } = route;
         // match.params获取匹配的路由参数
         return asyncData ? asyncData(store, Object.assign(match.params, request.query)) : Promise.resolve(null);
@@ -82,7 +82,7 @@ class ServerRenderer {
       })
     })
   }
-  _generateHtml(root, extractor, initalState){
+  _generateHtml(root, extractor, initialState){
     // 必须在组件renderToString后获取
     let head = Helmet.renderStatic();
     const { title, meta, link } = head;
@@ -91,7 +91,7 @@ class ServerRenderer {
     .replace('<!--react-ssr-head-->',
     `${meta.toString()}\n${link.toString()}\n${extractor.getLinkTags()}\n${extractor.getStyleTags()}
     <script type='text/javascript'>
-      window.__INITIAL_STATE__=${JSON.stringify(initalState)};
+      window.__INITIAL_STATE__=${JSON.stringify(initialState)};
     </script>`)
     .replace('<!--react-ssr-outlet-->', 
     `<div>${root}</div>\n${extractor.getScriptTags()}`  
